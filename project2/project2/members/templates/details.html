@@ -1,0 +1,23 @@
+
+{% extends "master.html" %}
+
+
+{% block title %}
+    Szczegóły uzytkownika {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div>
+        <h3>Szczegóły wybranego uzytkownika</h3>
+
+        <h1>Imię i nazwisko {{ mymember.firstname }} {{ mymember.lastname }}</h1>
+
+        <p>
+            Zobacz listę wszystkich uzytkowników <a href="/members">kliknij tutaj</a>
+        </p>
+
+    </div>
+
+{% endblock %}

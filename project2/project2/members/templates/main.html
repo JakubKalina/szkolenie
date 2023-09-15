@@ -1,0 +1,168 @@
+
+{% extends "master.html" %}
+
+
+{% block title %}
+
+    Strona główna
+
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 style="text-align: center;">Strona główna</h1>
+
+    <div class="alert alert-primary" role="alert">
+        Witamy na nowej stronie
+    </div>
+
+    <h2>Uzytkownicy</h2>
+
+    <p>Zobacz listę wszystkich uzytkowników strony <a href="members/">Zobacz więcej</a></p>
+
+
+    <!-- Wykorzystanie zmiennej w kodzie -->
+    {% with firstname="Adam" %}
+
+        <div>
+            Uzytkownik {{ firstname }}
+        </div>
+
+    {% endwith %}
+
+
+    <!-- Wykorzystanie instrukcji warunkowej -->
+
+    <!-- {% if flag == 1 %}
+        <h2>
+            Zmienna ma wartosc jeden
+        </h2>
+    {% elif flag == 2 %}
+        <h2>
+            Zmienna ma wartosc dwa
+        </h2>
+    {% else %}
+        <h2>
+            W kazdym z posostałych przypadków
+        </h2>
+    {% endif %} -->
+
+    <!-- Operatory logiczne w Django -->
+
+    <!-- Porównanie wartości między sobą -  == -->
+    
+    <!-- Czy elementy są rózne od siebie -  != -->
+
+    <!-- Czy element jest większy -  > -->
+
+    <!-- Czy element jest mniejszy -  < -->
+
+    <!-- Czy element jest większy lub równy -  >= -->
+
+    <!-- Czy element jest mniejszy lub równy -  <= -->
+
+
+    <!-- Czy zostały spełnione dwie operacje logiczne na raz ( i / and / && ) -  and -->
+
+    <!-- Czy została spełniona dowolna z operacji logicznych ( lub / or / || ) -  or -->
+
+    <!-- Przykład wyrazenia: ((warunek1 AND warunek2) OR warunek3) -->
+
+
+    <!-- Sprawdzenie czy lista zawiera podany element - in -->
+    <!-- {% if 'Kacper' in users %}
+        <h4>Uzytkownik Kacper jest obecny na liście</h4>
+    {% endif %} -->
+
+    <!-- Sprawdzenie czy lista nie zawiera podanego elementu - not in -->
+    <!-- {% if 'Kacper' not in users %}
+        <h4>Uzytkownik Kacper jest obecny na liście</h4>
+    {% endif %} -->
+
+
+    <!-- Sprawdzenie czy dwa obiekty są takie same - is -->
+    <!-- {% if a is b %}
+        <h4>Obiekty a i b są takie same</h4>
+    {% endif %} -->
+
+    <!-- Sprawdzenie czy dwa obiekty nie są takie same - is not  -->
+        <!-- {% if a is not b %}
+        <h4>Obiekty a i b nie są takie same</h4>
+    {% endif %} -->
+
+
+    <!-- Odwrócenie działania (iterowania) pętli -->
+    <!-- {% for x in users reversed %}
+    {% endfor %} -->
+
+
+    <!-- Wykrycie pustej wartości w pętli -->
+    <!-- {% for x in users reversed %}
+        {% empty %}
+            Blok kodu jaki zostanie wyświetlony gdy element w danej iteracji jest pusty
+    {% endfor %} -->
+
+
+    <!-- Dodatkowe pola w przypadku pętli for -->
+
+        <!-- Pętla for - counter - informacja o aktualnym indeksie iteracji - startujący od 1 -->
+            <!-- {% for x in users %}
+                <p> {{ forloop.counter }}</p>
+            {% endfor %} -->
+
+        <!-- Pętla for - counter0 - informacja o aktualnym indeksie iteracji - startujący od 0 -->
+            <!-- {% for x in users %}
+                <p> {{ forloop.counter0 }}</p>
+            {% endfor %} -->
+
+        <!-- Pętla for - first - sprawdzenie czy teraz jest pierwsza iteracja | n liczby elementów to na indeksie 0/1  -->
+            <!-- {% for x in users %} 
+                {% if forloop.first %}
+                    <p>pierwsza iteracja pętli</p>
+                {% endif %}
+            {% endfor %} -->
+
+        <!-- Pętla for - last - sprawdzenie czy teraz jest ostatnia iteracja | n liczby elementów to element n-ty  -->
+            <!-- {% for x in users %} 
+                {% if forloop.last %}
+                        <p>ostatnia iteracja pętli</p>
+                {% endif %}
+            {% endfor %} -->
+        
+        <!-- Pętla for - revcounter - informacja o aktualnym indeksie iteracji reversed- startujący od 1 -->
+            <!-- {% for x in users %}
+                <p> {{ forloop.counter }}</p>
+            {% endfor %} -->
+
+        <!-- Pętla for - revcounter0 - informacja o aktualnym indeksie iteracji reversed - startujący od 0 -->
+            <!-- {% for x in users %}
+                <p> {{ forloop.revcounter0 }}</p>
+            {% endfor %} -->
+
+
+
+        <!-- Komentarze w Django -->
+
+
+        <!-- Komentarz opisowy w Django -->
+        <!-- {% comment "To jest jakiś dłuzszy komentarz" %}
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+        {% endcomment %} -->
+
+
+        <!-- Hostowanie plików statycznych na produkcji https://whitenoise.readthedocs.io/en/latest/ -->
+
+
+{% endblock %}

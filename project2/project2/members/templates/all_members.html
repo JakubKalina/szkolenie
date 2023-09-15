@@ -1,0 +1,27 @@
+
+{% extends "master.html" %}
+
+
+{% block title %}
+    Lista wszystkich uzytkowników strony
+{% endblock %}
+
+
+{% block content %}
+
+    <p>
+        <a href="/">Strona główna</a>
+    </p>
+
+    <h1>Wszyscy uzytkownicy</h1>
+
+    <!-- Nawigowanie do szczegółów uzytkownika po jego unikalnym ID -->
+    <!-- Przykład routa: naszastrona.pl/members/1 -->
+
+    <ul>
+        {% for x in mymembers %}
+            <li>{{ x.firstname }} {{ x.lastname }}  <a href="details/{{ x.id }}"> zobacz szczegóły </a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
